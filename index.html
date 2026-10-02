@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRICK TILES 搗蛋格子 | 體感跳格子極限挑戰</title>
+  <!-- 引入 Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+            chakra: ['"Chakra Petch"', 'sans-serif'],
+          },
+          colors: {
+            neonGreen: '#00ff88',
+            neonRed: '#ff0055',
+            neonBlue: '#00e5ff',
+            darkBg: '#0b0f19',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-darkBg text-white font-sans selection:bg-neonGreen selection:text-black">
+
+  <!-- 1. 導覽列：使用圖 2（方形 Logo） -->
+  <header class="sticky top-0 z-50 bg-[#0b0f19]/90 backdrop-blur border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- 圖 2：品牌 Logo -->
+        <img src="logo.png" alt="搗蛋格子 DD JUMP" class="h-10 w-auto object-contain">
+      </a>
+      <nav class="hidden md:flex items-center gap-8 font-medium">
+        <a href="#about" class="hover:text-neonGreen transition">關於挑戰</a>
+        <a href="#events" class="hover:text-neonGreen transition">特惠活動</a>
+        <a href="#location" class="hover:text-neonGreen transition">交通資訊</a>
+        <a href="https://d-d-jump.reservalue.site/" target="_blank" class="bg-neonGreen text-black font-bold px-5 py-2 rounded-full hover:shadow-[0_0_15px_#00ff88] transition">
+          立即預約
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. Hero 主視覺區：使用圖 1（D.D JUMP 飛行貓主圖） -->
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- 文案 -->
+      <div class="space-y-6">
+        <span class="inline-block px-3 py-1 bg-neonRed/20 text-neonRed font-chakra rounded border border-neonRed text-sm tracking-wider uppercase">
+          Neon Arcade Challenge
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-wide font-chakra">
+          TRICK TILES<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonGreen via-neonBlue to-neonRed">
+            體感跳格子極限挑戰
+          </span>
+        </h1>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          踩下發光格子、閃避地雷陷阱！召集隊友一起動動手腳，挑戰最高分！
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#events" class="bg-neonGreen text-black font-bold px-8 py-3 rounded-lg hover:shadow-[0_0_20px_#00ff88] transition">
+            查看優惠活動
+          </a>
+          <a href="tel:034512195" class="border border-gray-600 px-6 py-3 rounded-lg hover:border-neonBlue hover:text-neonBlue transition">
+            預約專線：03-4512195
+          </a>
+        </div>
+      </div>
+
+      <!-- 圖 1：主視覺插畫 -->
+      <div class="flex justify-center relative">
+        <div class="absolute -inset-4 bg-gradient-to-tr from-neonBlue/30 to-neonRed/30 rounded-3xl blur-2xl -z-10"></div>
+        <img src=""D:\搗蛋\1-1.jpg" alt=""D:\搗蛋\1-1.jpg"" class="w-full max-w-md rounded-2xl shadow-2xl border border-gray-700 hover:scale-105 transition duration-300">
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 特惠公告區塊：使用圖 3（特惠海報） -->
+  <section id="events" class="py-16 bg-[#101626] border-y border-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-black font-chakra text-neonGreen">SPECIAL OFFER</h2>
+        <p class="text-gray-400 mt-2">最新特惠活動公告，追蹤分享即可現折！</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto bg-darkBg p-6 md:p-8 rounded-2xl border border-gray-700 shadow-xl">
+        <!-- 圖 3：活動海報 -->
+        <div class="overflow-hidden rounded-xl">
+          <img src="promo-poster.jpg" alt="搗蛋格子 特惠活動公告" class="w-full h-auto object-cover rounded-xl hover:scale-105 transition duration-300">
+        </div>
+
+        <!-- 活動重點提煉 -->
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold text-white">動動手 ▶ 追蹤 + 分享貼文</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-lg font-bold text-neonGreen">
+              <span class="bg-neonGreen/20 px-2.5 py-1 rounded text-sm">平日</span>
+              <span>現折 100 元！</span>
+            </li>
+            <li class="flex items-center gap-3 text-lg font-bold text-neonBlue">
+              <span class="bg-neonBlue/20 px-2.5 py-1 rounded text-sm">假日</span>
+              <span>現折 50 元！</span>
+            </li>
+          </ul>
+          <p class="text-sm text-gray-400 border-t border-gray-800 pt-3">
+            ※ 每人限折一次，詳情以現場及官方公告為準。<br>
+            📍 門市地址：桃園市中壢區南園二路421號
+          </p>
+          <a href="#booking" class="block text-center w-full bg-neonRed text-white font-bold py-3 rounded-lg hover:shadow-[0_0_15px_#ff0055] transition">
+  前往線上預約
+</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-neonGreen selection:text-black">
+
+  <!-- 導航列 -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-chakra text-2xl font-bold tracking-wider text-neonGreen">
+        TRICK<span class="text-neonRed">TILES</span> 搗蛋格子
+      </a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#about" class="hover:text-neonGreen transition">玩法特色</a>
+        <a href="#pricing" class="hover:text-neonGreen transition">票價方案</a>
+        <a href="#booking" class="hover:text-neonGreen transition">線上預約</a>
+        <a href="#location" class="hover:text-neonGreen transition">場館交通</a>
+      </div>
+      <a href="#booking" class="px-4 py-2 text-sm font-bold bg-neonGreen text-black rounded-lg hover:shadow-[0_0_15px_#00ff88] transition">立即預訂</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20 overflow-hidden">
+    <!-- 棋盤光效背景 -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <div class="inline-block px-3 py-1 mb-4 border border-neonGreen/40 rounded-full text-xs font-mono text-neonGreen tracking-widest uppercase bg-neonGreen/10">
+        🔥 全台最火爆體感派對挑戰
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+        踩爆綠格・避開搗蛋！<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonGreen via-neonBlue to-neonRed">
+          最燃脂的體感像素競技
+        </span>
+      </h1>
+      <p class="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+        動態感應地磚 × 聲光音效極限考驗。呼朋引伴組隊闖關，考驗反應速度與團隊默契！
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#booking" class="px-8 py-4 font-bold bg-neonGreen text-black rounded-xl hover:shadow-[0_0_25px_#00ff88] hover:scale-105 transition transform">
+          ⚡ 立即預約時段
+        </a>
+        <a href="#about" class="px-8 py-4 font-bold border border-slate-700 hover:border-slate-500 rounded-xl transition">
+          探索遊戲玩法
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 玩法特色 Section -->
+  <section id="about" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4 font-chakra">HOW TO PLAY</h2>
+      <p class="text-slate-400">規則超簡單，好玩到停不下來！</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neonGreen/50 transition">
+        <div class="w-12 h-12 rounded-lg bg-neonGreen/20 flex items-center justify-center text-neonGreen font-chakra text-2xl font-bold mb-6">🟩</div>
+        <h3 class="text-xl font-bold mb-2">綠色庇護：重整旗鼓</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">綠色格為安全緩衝區，在關卡切換或極限閃避時，站穩綠格才能商討下一波闖關戰略。</p>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neonRed/50 transition">
+        <div class="w-12 h-12 rounded-lg bg-neonRed/20 flex items-center justify-center text-neonRed font-chakra text-2xl font-bold mb-6">🟥</div>
+        <h3 class="text-xl font-bold mb-2">致命搗蛋：紅色危險</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">紅色代表搗蛋陷阱！一旦踏入立刻扣減生命值。切勿因奔跑碰撞隊友而誤踩危險區。</p>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neonBlue/50 transition">
+        <div class="w-12 h-12 rounded-lg bg-neonBlue/20 flex items-center justify-center text-neonBlue font-chakra text-2xl font-bold mb-6">🟦</div>
+        <h3 class="text-xl font-bold mb-2">踩中得分：安全目標</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">踩踏隨機閃爍的綠色方格以獲得分數。隨著關卡難度提升，格子移動速度將成倍加快！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 票價方案 Section -->
+  <section id="pricing" class="py-24 bg-slate-900/50 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4 font-chakra">PRICING PLAN</h2>
+        <p class="text-slate-400">揪團同樂最划算，每場體驗 45 分鐘</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+       <!-- 價目表卡片容器 (建議放置於 grid grid-cols-1 lg:grid-cols-2 gap-8) -->
+
+<!-- 405格 搗蛋中場 -->
+<div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
+  <div>
+    <span class="text-xs font-mono text-neonGreen uppercase tracking-wider">Medium Arena · 405 Grid</span>
+    <h3 class="text-2xl font-bold mt-1 mb-2 text-white">405格 搗蛋中場</h3>
+    <p class="text-slate-400 text-sm mb-5">適合 2-5 人，平日低消 $2000 起 / 假日低消 $2500 起</p>
+    
+    <!-- 中場價目表 -->
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-center text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-white/10 text-slate-400">
+            <th class="py-2 font-medium">人數</th>
+            <th class="py-2 font-medium">平日價格</th>
+            <th class="py-2 font-medium">假日價格</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/5 text-slate-200">
+          <tr>
+            <td class="py-2.5 font-bold text-white">2 人</td>
+            <td class="py-2.5">$1000/人 <span class="text-xs text-slate-400 block">(共$2000)</span></td>
+            <td class="py-2.5 text-neonGreen">$1250/人 <span class="text-xs text-slate-400 block">(共$2500)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2.5 font-bold text-white">3 人</td>
+            <td class="py-2.5">$666/人 <span class="text-xs text-slate-400 block">(共$2000)</span></td>
+            <td class="py-2.5 text-neonGreen">$833/人 <span class="text-xs text-slate-400 block">(共$2500)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2.5 font-bold text-white">4 人</td>
+            <td class="py-2.5">$500/人 <span class="text-xs text-slate-400 block">(共$2000)</span></td>
+            <td class="py-2.5 text-neonGreen">$625/人 <span class="text-xs text-slate-400 block">(共$2500)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2.5 font-bold text-white">5 人</td>
+            <td class="py-2.5">$400/人 <span class="text-xs text-slate-400 block">(共$2000)</span></td>
+            <td class="py-2.5 text-neonGreen">$500/人 <span class="text-xs text-slate-400 block">(共$2500)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 陪同票備註 -->
+    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 space-y-1 mb-6">
+      <div class="font-bold text-amber-400 flex items-center justify-between">
+        <span>陪同票（僅休息區）</span>
+        <span class="text-sm font-extrabold text-white">$50 / 人</span>
+      </div>
+      <p class="text-slate-400">※ 陪同票無法入場遊玩，僅提供休息區座位。</p>
+      <p class="text-slate-400">※ 5歲(含)以下孩童免陪同票，但不得入場遊玩。</p>
+    </div>
+  </div>
+  <a href="#booking" class="w-full text-center py-3 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-white transition">預約中場</a>
+</div>
+
+<!-- 560格 搗蛋大場 -->
+<div class="p-6 md:p-8 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-neonGreen/40 relative flex flex-col justify-between shadow-[0_0_30px_rgba(0,255,136,0.1)]">
+  <div class="absolute -top-3 right-6 bg-neonGreen text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">熱門推薦</div>
+  <div>
+    <span class="text-xs font-mono text-neonGreen uppercase tracking-wider">Large Arena · 560 Grid</span>
+    <h3 class="text-2xl font-bold mt-1 mb-2 text-white">560格 搗蛋大場</h3>
+    <p class="text-slate-400 text-sm mb-5">適合 2-10 人揪團對決，平日低消 $2500 起 / 假日低消 $3000 起</p>
+    
+    <!-- 大場價目表 -->
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-center text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-white/10 text-slate-400">
+            <th class="py-2 font-medium">人數</th>
+            <th class="py-2 font-medium">平日價格</th>
+            <th class="py-2 font-medium">假日價格</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/5 text-slate-200">
+          <tr>
+            <td class="py-2 font-bold text-white">2 人</td>
+            <td class="py-2">$1250/人 <span class="text-[11px] text-slate-400 block">(共$2500)</span></td>
+            <td class="py-2 text-neonGreen">$1500/人 <span class="text-[11px] text-slate-400 block">(共$3000)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">3 人</td>
+            <td class="py-2">$883/人 <span class="text-[11px] text-slate-400 block">(共$2500)</span></td>
+            <td class="py-2 text-neonGreen">$1000/人 <span class="text-[11px] text-slate-400 block">(共$3000)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">4 人</td>
+            <td class="py-2">$625/人 <span class="text-[11px] text-slate-400 block">(共$2500)</span></td>
+            <td class="py-2 text-neonGreen">$750/人 <span class="text-[11px] text-slate-400 block">(共$3000)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">5 人</td>
+            <td class="py-2">$500/人 <span class="text-[11px] text-slate-400 block">(共$2500)</span></td>
+            <td class="py-2 text-neonGreen">$600/人 <span class="text-[11px] text-slate-400 block">(共$3000)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">6 人</td>
+            <td class="py-2">$420/人 <span class="text-[11px] text-slate-400 block">(共$2520)</span></td>
+            <td class="py-2 text-neonGreen">$500/人 <span class="text-[11px] text-slate-400 block">(共$3000)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">7 人</td>
+            <td class="py-2">$400/人 <span class="text-[11px] text-slate-400 block">(共$2800)</span></td>
+            <td class="py-2 text-neonGreen">$480/人 <span class="text-[11px] text-slate-400 block">(共$3360)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">8 人</td>
+            <td class="py-2">$380/人 <span class="text-[11px] text-slate-400 block">(共$3040)</span></td>
+            <td class="py-2 text-neonGreen">$460/人 <span class="text-[11px] text-slate-400 block">(共$3680)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">9 人</td>
+            <td class="py-2">$360/人 <span class="text-[11px] text-slate-400 block">(共$3240)</span></td>
+            <td class="py-2 text-neonGreen">$430/人 <span class="text-[11px] text-slate-400 block">(共$3870)</span></td>
+          </tr>
+          <tr>
+            <td class="py-2 font-bold text-white">10 人</td>
+            <td class="py-2">$350/人 <span class="text-[11px] text-slate-400 block">(共$3500)</span></td>
+            <td class="py-2 text-neonGreen">$400/人 <span class="text-[11px] text-slate-400 block">(共$4000)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a href="#booking" class="w-full text-center py-3 bg-neonGreen text-black hover:shadow-[0_0_15px_#00ff88] rounded-xl font-bold transition">預約大場</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 線上預約表單 Section -->
+  <section id="booking" class="py-24 max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4 font-chakra">ONLINE BOOKING</h2>
+      <p class="text-slate-400">填寫以下資料，預留您的專屬挑戰場次</p>
+    </div>
+
+    <form id="bookingForm" class="bg-white/5 border border-white/10 p-8 rounded-2xl space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium mb-2 text-slate-300">預約大名</label>
+          <input type="text" required placeholder="王小明" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2 text-slate-300">手機號碼</label>
+          <input type="tel" required placeholder="0912-345-678" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen">
+        </div>
+      </div>
+
+<!-- 日期選擇 (如果頁面已有請確保 id="booking-date") -->
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2 text-slate-300">預約日期</label>
+  <input type="date" id="booking-date" required class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen">
+</div>
+
+<!-- 場地選擇 -->
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2 text-slate-300">場地類型</label>
+  <select id="court-type" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen">
+    <option value="" disabled selected>請選擇場地</option>
+    <option value="medium">中場 (2-5人)</option>
+    <option value="large">大場 (2-10人)</option>
+  </select>
+</div>
+
+<!-- 人數選擇 -->
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2 text-slate-300">遊玩人數</label>
+  <select id="player-count" required disabled class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen disabled:opacity-50 disabled:cursor-not-allowed">
+    <option value="" disabled selected>請先選擇場地</option>
+  </select>
+</div>
+
+<!-- 場次時段 -->
+<div class="mb-4">
+  <label class="block text-sm font-medium mb-2 text-slate-300">場次時段</label>
+  <select id="time-slot" required disabled class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neonGreen disabled:opacity-50">
+    <option value="">請先選擇日期與場地</option>
+  </select>
+</div>
+
+<script>
+  // 假日時段清單
+  const weekendSlots = {
+    large: [
+      { value: "11:00", label: "11:00 - 12:00" },
+      { value: "12:00", label: "12:00 - 13:00" },
+      { value: "13:00", label: "13:00 - 14:00" },
+      { value: "14:00", label: "14:00 - 15:00" },
+      { value: "15:00", label: "15:00 - 16:00" },
+      { value: "16:00", label: "16:00 - 17:00" },
+      { value: "17:00", label: "17:00 - 18:00" },
+      { value: "18:00", label: "18:00 - 19:00" },
+      { value: "19:00", label: "19:00 - 20:00" },
+      { value: "20:00", label: "20:00 - 21:00" },
+      { value: "21:00", label: "21:00 - 22:00" }
+    ],
+    medium: [
+      { value: "11:30", label: "11:30 - 12:30" },
+      { value: "12:30", label: "12:30 - 13:30" },
+      { value: "13:30", label: "13:30 - 14:30" },
+      { value: "14:30", label: "14:30 - 15:30" },
+      { value: "15:30", label: "15:30 - 16:30" },
+      { value: "16:30", label: "16:30 - 17:30" },
+      { value: "17:30", label: "17:30 - 18:30" },
+      { value: "18:30", label: "18:30 - 19:30" },
+      { value: "19:30", label: "19:30 - 20:30" },
+      { value: "20:30", label: "20:30 - 21:30" }
+    ]
+  };
+
+  // 平日時段清單
+  const weekdaySlots = {
+    large: [
+      { value: "13:00", label: "13:00 - 14:00" },
+      { value: "14:00", label: "14:00 - 15:00" },
+      { value: "15:00", label: "15:00 - 16:00" },
+      { value: "16:00", label: "16:00 - 17:00" },
+      { value: "17:00", label: "17:00 - 18:00" },
+      { value: "18:00", label: "18:00 - 19:00" },
+      { value: "19:00", label: "19:00 - 20:00" },
+      { value: "20:00", label: "20:00 - 21:00" }
+    ],
+    medium: [
+      { value: "13:30", label: "13:30 - 14:30" },
+      { value: "14:30", label: "14:30 - 15:30" },
+      { value: "15:30", label: "15:30 - 16:30" },
+      { value: "16:30", label: "16:30 - 17:30" },
+      { value: "17:30", label: "17:30 - 18:30" },
+      { value: "18:30", label: "18:30 - 19:30" },
+      { value: "19:30", label: "19:30 - 20:30" }
+    ]
+  };
+
+  // 特殊國定假日清單
+  const nationalHolidays = [
+    "2026-01-01", "2026-02-16", "2026-02-17", "2026-02-18",
+    "2026-04-03", "2026-04-04", "2026-06-19", "2026-09-25", "2026-10-09",
+    "2026-10-10", "2026-10-25", "2026-10-26", "2026-12-25"
+  ];
+
+  // DOM 元素選取（統一將場地改為 court-type）
+  const dateInput = document.getElementById('booking-date');
+  const courtSelect = document.getElementById('court-type');
+  const slotSelect = document.getElementById('time-slot');
+  const playerSelect = document.getElementById('player-count');
+
+  // 人數上下限規則
+  const courtRules = {
+    medium: { min: 2, max: 5 },
+    large: { min: 2, max: 10 }
+  };
+
+  // 更新時段選單
+  function updateSlots() {
+    if (!dateInput || !courtSelect || !slotSelect) return;
+
+    const selectedDate = dateInput.value;
+    const venue = courtSelect.value;
+
+    if (!selectedDate || !venue) {
+      slotSelect.innerHTML = '<option value="">請先選擇日期與場地</option>';
+      slotSelect.disabled = true;
+      return;
+    }
+
+    const dateObj = new Date(`${selectedDate}T00:00:00`);
+    const dayOfWeek = dateObj.getDay();
+    const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6 || nationalHolidays.includes(selectedDate));
+
+    const slotGroup = isWeekend ? weekendSlots : weekdaySlots;
+    const slotData = slotGroup[venue] || [];
+
+    slotSelect.innerHTML = '<option value="">請選擇時段</option>';
+    slotData.forEach(slot => {
+      const opt = document.createElement('option');
+      opt.value = slot.value;
+      opt.textContent = slot.label;
+      slotSelect.appendChild(opt);
+    });
+
+    slotSelect.disabled = slotData.length === 0;
+  }
+
+  // 更新人數選單
+  function updatePlayerOptions(courtType) {
+    playerSelect.innerHTML = '';
+    const rule = courtRules[courtType];
+
+    if (!rule) {
+      playerSelect.disabled = true;
+      playerSelect.innerHTML = '<option value="" disabled selected>請先選擇場地</option>';
+      return;
+    }
+
+    playerSelect.disabled = false;
+    playerSelect.add(new Option('請選擇遊玩人數', '', true, true));
+    playerSelect.options[0].disabled = true;
+
+    for (let count = rule.min; count <= rule.max; count++) {
+      playerSelect.add(new Option(`${count} 人`, count));
+    }
+  }
+
+  // 事件綁定
+  if (dateInput) {
+    dateInput.addEventListener('change', updateSlots);
+  }
+
+  if (courtSelect) {
+    courtSelect.addEventListener('change', (e) => {
+      updatePlayerOptions(e.target.value);
+      updateSlots(); // 場地變更時同時觸發時段更新
+    });
+  }
+</script>
+<!-- 超過 10 人引導 -->
+<p class="mt-2 text-xs text-slate-400">
+  超過 10 人團體預約，請加入官方 Line 洽詢：
+  <a href="https://lin.ee/8lliscn" target="_blank" rel="noopener noreferrer" class="text-neonGreen underline hover:text-emerald-400 transition-colors">
+    lin.ee/8lliscn
+  </a>
+</p>
+
+<script>
+  const venueSelect = document.getElementById('venue-select');
+  const playerCountSelect = document.getElementById('player-count');
+
+  const updatePlayerOptions = () => {
+    const venue = venueSelect.value;
+    const maxPlayers = venue === 'medium' ? 5 : 10;
+    const minPlayers = 2;
+
+    playerCountSelect.innerHTML = '';
+    for (let i = minPlayers; i <= maxPlayers; i++) {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = `${i} 人`;
+      playerCountSelect.appendChild(option);
+    }
+  };
+
+  venueSelect.addEventListener('change', updatePlayerOptions);
+  updatePlayerOptions();
+</script>
+      </div>
+
+      <button type="submit" class="w-full py-4 bg-neonGreen text-black font-bold text-lg rounded-xl hover:shadow-[0_0_20px_#00ff88] transition">
+        確認送出預約申請
+      </button>
+    </form>
+  </section>
+
+  <!-- 場館與聯絡資訊 -->
+  <footer id="location" class="border-t border-white/10 py-12 bg-black/40 text-sm text-slate-400">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-chakra text-lg font-bold text-white mb-3">TRICK TILES</h4>
+        <p>顛覆想像的室內體感跳格子極限運動，適合全年齡段組隊挑戰！</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">場館須知</h4>
+        <p>• 為維護感應地磚，請務必穿著運動鞋進場。<br>• 患有心臟病、孕婦或腿部不適者請衡量入場。</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">門市與客服</h4>
+        <p>營業時間：13:00 - 21:00（平日）/ 11:00 - 22:00（週末）<br>客服官方 LINE：@tricktiles_tw</p>
+      </div>
+    </div>
+    <div class="text-center mt-12 text-xs text-slate-600">
+      &copy; 2026 TRICK TILES. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // 預約表單提交提示
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('感謝預約！我們已收到您的申請，將在 1 小時內完成匯款，否則預約單將被系統自動取消。');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
